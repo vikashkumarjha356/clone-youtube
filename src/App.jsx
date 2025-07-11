@@ -10,20 +10,25 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import MainContainer from './components/MainContainer'
 import WatchPage from './components/WatchPage'
 
-const appRouter = createBrowserRouter([{
-  path: "/",
-  element: <> <Head /><Body /></>,
-  children: [
-    {
-      path: "/",
-      element: <MainContainer />
-    },
-    {
-      path: "watch",
-      element: <WatchPage />
-    }
-  ]
-}])
+const appRouter = createBrowserRouter(
+  [{
+    path: "/",
+    element: <> <Head /><Body /></>,
+    children: [
+      {
+        path: "/",
+        element: <MainContainer />
+      },
+      {
+        path: "watch",
+        element: <WatchPage />
+      }
+    ]
+  }],
+  {
+    basename: "/clone-youtube"  // ✅ Add this line
+  }
+)
 
 function App() {
 
